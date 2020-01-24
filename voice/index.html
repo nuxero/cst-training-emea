@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <script src="nexmoClient.js"></script>
+</head>
+
+<body>
+
+  <form id="call-phone-form">
+    <h1>Call Phone from App</h1>
+    <input type="text" name="phonenumber" value="">
+    <input name="call" type="submit" value="Call" />
+    <input name="hangup" type="submit" value="Hang Up" />
+  </form>
+
+  <script>
+    // const USER_JWT = "PASTE YOUR JWT HERE";
+    const USER_JWT = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1Nzk4NzU1ODcsImp0aSI6IjkzODQ3YmIwLTNlYjQtMTFlYS1hMDQ0LWFiMzBkYTZjYWE1OSIsImV4cCI6MTU3OTg5NzE4NiwiYWNsIjp7InBhdGhzIjp7Ii8qL3VzZXJzLyoqIjp7fSwiLyovY29udmVyc2F0aW9ucy8qKiI6e30sIi8qL3Nlc3Npb25zLyoqIjp7fSwiLyovZGV2aWNlcy8qKiI6e30sIi8qL2ltYWdlLyoqIjp7fSwiLyovbWVkaWEvKioiOnt9LCIvKi9hcHBsaWNhdGlvbnMvKioiOnt9LCIvKi9wdXNoLyoqIjp7fSwiLyova25vY2tpbmcvKioiOnt9fX0sImFwcGxpY2F0aW9uX2lkIjoiMmFiZjllNDUtYWQ4ZS00MGFiLTkyNmMtYTg3ZDc3NDQxMWY3Iiwic3ViIjoiZXBvcnRvbGFuIn0.lOQWnmuIabtFo0bwUlrMCyHnAtkmktx7e_3hNl2B2cbxYtqwNSn3wDv0TkGWoDIMAFbBMtugvJqSd-cJGQ7o97Xea0vhBlPLU4VpFvqJymS5cw2fOJx1hcV4Xltno4cJjp8-JAa1QXrcNeEB9rn27V8bNlKreUa-RBroe563GcXbuXrvxnpZKsRkR7qEarD6CvDgg5pdwitpiWYcJEnzxL7Ui2WY3HJZoaCspO4N5Cqp94yhLbKV2XBBTqkZLWDsowBnIVJzeIbQoTOMG2Wjtsl4W5jkFK1ZELhuG1drZIa53Xje7nb1HtWF47U4T-wjiqw6olis4-C2XqAqejEhFQ";
+    const callPhoneForm = document.getElementById("call-phone-form");
+    const callButton = callPhoneForm.children.call;
+    const hangUpButton = callPhoneForm.children.hangup;
+    let currentCall = null;
+    new NexmoClient({ debug: true })
+      .login(USER_JWT)
+      .then(app => {
+        callButton.addEventListener("click", event => {
+          event.preventDefault();
+          let number = callPhoneForm.children.phonenumber.value;
+          console.log('Call >>>>>>', number)
+          app.callServer(number).then((call) =>{
+            console.log('Call Server:', call);
+            currentCall = call;
+          }).catch((err)=>{
+              console.log('Err:', err);
+          });
+        });
+        hangUpButton.addEventListener("click", event => {
+        event.preventDefault();
+        console.log('Hangup Current Call')
+           if (!currentCall){
+               return;
+           }
+           currentCall.hangUp({reason_code: 1, reason_text: 'webapp hangup - cst'});
+        });
+      })
+      .catch(console.error);
+  </script>
+
+</body>
+
+</html>
