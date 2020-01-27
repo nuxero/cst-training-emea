@@ -10,7 +10,9 @@ You'll need to complete 4 steps to complete this tutorial, and when you do your 
 
 1. Generate sessions
 2. Generate tokens per session
-3. Receive events
+3. Receive Session Monitoring events
+
+You can test your server using (Postman)[https://www.getpostman.com/] or (cURL)[https://help.ubidots.com/en/articles/2165289-learn-how-to-install-run-curl-on-windows-macosx-linux]
 
 Good Luck!
 
