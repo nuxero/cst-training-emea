@@ -6,7 +6,7 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var tokboxRouter = require('./routes/tkbx');
-var eventsRouter = require('./routes/events');
+var eventRouter = require('./routes/event');
 
 var app = express();
 
@@ -19,6 +19,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/tkbx', tokboxRouter);
-app.use('/events', eventsRouter);
+app.use('/event', eventRouter);
 
 module.exports = app;
