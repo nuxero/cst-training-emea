@@ -1,23 +1,31 @@
 var express = require('express');
 var router = express.Router();
 
+var sessionId;
+
 //1. Require TB client and initalize it
 
 const createSession = callback => {
-  //2. Generate session and call 'callback' method
+  //2. Generate session and update the property sessionId. Then call 'onSessionCreated()' method.
+  //    "...sessionId = COMPLETE;"
+  //    "...onSessionCreated();"
 };
 
 router.post('/session/', function(req, res, next) {
-  var sessionCallback = session => {
-    res.json({ sessionId: session.sessionId });
+  var onSessionCreated = () => {
+    res.json({ sessionId: sessionId });
   };
 
-  createSession(sessionCallback);
+  if (!sessionId) {
+    createSession(onSessionCreated);
+  } else {
+    onSessionCreated();
+  }
 });
 
 router.post('/user/', function(req, res, next) {
-  //3. Create oken
-  const token = 'COMPLETE TOKEN GENERATION';
+  //3. Create oken and return to client
+  const token = 'COMPLETE HERE';
   res.json({ token });
 });
 
