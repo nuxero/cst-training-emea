@@ -18,7 +18,6 @@
                         placeholder="Recipient's phone number">
                 </div>
                 <button class="btn btn-primary" value="Call" name="call"> Call </button>
-                <button class="btn btn-default" value="Hang Up" name="hangup">Hang Up</button>
             </form>
         </div>
     </div>
@@ -47,16 +46,8 @@
                     console.log('Call Server:', call);
                     currentCall = call;
                 }).catch((err) => {
-                    console.log('Err:', err);
+                    console.log('Error:', err);
                 });
-            });
-            hangUpButton.addEventListener("click", event => {
-                event.preventDefault();
-                console.log('Hangup Current Call')
-                if (!currentCall) {
-                    return;
-                }
-                currentCall.hangUp({ reason_code: 1, reason_text: 'webapp hangup - cst' });
             });
         })
         .catch(console.error);

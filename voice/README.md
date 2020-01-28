@@ -54,16 +54,16 @@ Well done. Now it's time to implement webhooks :)
 ### Server 
 
 The `server.js` contains the instruction for your next step. Please, have a look! 
+ 
+
+### Client
+
+The Client side uses Nexmo SDK to call the PSTN number. The method used is [Call Server](https://developer.nexmo.com/sdk/stitch/javascript/Application.html#callServer__anchor).
+
+**Bonus Point**: implement Hang Up Method (https://developer.nexmo.com/sdk/stitch/javascript/NXMCall.html#hangUp__anchor)
+
+Doc: https://developer.nexmo.com/sdk/stitch/javascript/index.html
 
 
 
-=======
-
-Create App using CLI
-Create User
-
-Once I have the user, create JWT
-
-nexmo jwt:generate ./private.key sub=MY_USER_NAME exp=$(($(date +%s)+21600)) acl='{"paths":{"/*/users/**":{},"/*/conversations/**":{},"/*/sessions/**":{},"/*/devices/**":{},"/*/image/**":{},"/*/media/**":{},"/*/applications/**":{},"/*/push/**":{},"/*/knocking/**":{}}}' application_id=MY_APP_ID
-
-Remmeber to replace appId, private Key and USER NAME
+## HAVE FUN!!!!!
