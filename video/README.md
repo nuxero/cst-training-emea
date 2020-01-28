@@ -12,6 +12,8 @@ You'll need to complete 4 steps to complete this tutorial, and when you do your 
 2. Generate tokens for the session
 3. Receive the session events
 
+The server skeleton is located in ./application_server and the steps you need to complete are in routes/tkbx.js and routes/events.js. You need to install the server - 'npm i' and run it with 'npm run start'. By default the server runs on port 3000.
+
 **NOTE**: The server will only create one session per run, which means that all clients that fetch the session will be connected to the same one. This will enable you see yourself from two different clients.
 
 You can test your server using (Postman)[https://www.getpostman.com/] or (cURL)[https://help.ubidots.com/en/articles/2165289-learn-how-to-install-run-curl-on-windows-macosx-linux]
@@ -33,6 +35,6 @@ Please follow this (tutorial)[https://tokbox.com/developer/tutorials/web/basic-v
 
 In the end you should be able to perform a one participant video session and see yourself.
 
-The skelaton for the tutorial is already in the web_client dir!
+The skeleton for the tutorial is already in the web_client dir!
 
 Good Luck!

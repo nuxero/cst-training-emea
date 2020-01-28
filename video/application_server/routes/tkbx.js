@@ -5,9 +5,9 @@ var sessionId;
 
 //1. Require TB client and initalize it
 
-const createSession = callback => {
+const createSession = onSessionCreated => {
   //2. Generate session and update the property sessionId. Then call 'onSessionCreated()' method.
-  //    "...sessionId = COMPLETE;"
+  //    "...sessionId = 123453;"
   //    "...onSessionCreated();"
 };
 
