@@ -2,7 +2,7 @@
 
 ## Introduction
 
-In this tutorial, you will learn how to create a Client SDK application and then write the code to make a phone call from your web app to a PSTN phone.
+In this tutorial, you will learn how to create a Client SDK application and then write the code to make a phone call from your Web App to a PSTN phone.
 
 To achieve this, you will need:
 
@@ -11,11 +11,9 @@ To achieve this, you will need:
 
 #### Step 1: Create Nexmo Application
 
-1. First create your project directory if you've not already done so.
+**Note**: make sure to have Nexmo CLI Installed
 
-2. Change into the project directory.
-
-3. Create a Nexmo application interactively. The following command enters interactive mode:
+1. Create a Nexmo application interactively. The following command enters interactive mode:
 
 ```
 nexmo app:create
@@ -37,7 +35,7 @@ You can obtain information about your application, including Application ID, in 
 nexmo user:create name="MY_USER_NAME"
 ```
 
-You should get a USER ID as response
+You should get a **USER ID** as response
 
 #### Step 3: Create a JWT
 
@@ -56,11 +54,6 @@ Well done. Now it's time to implement webhooks :)
 ### Server 
 
 The `server.js` contains the instruction for your next step. Please, have a look! 
-
----> Introduction: https://developer.nexmo.com/client-sdk/tutorials/app-to-phone/introduction
-
-
-
 
 
 

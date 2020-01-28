@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 /* STEP 1
 
 Nexmo will make a request to your answer_url when an inbound call is received.
+
 You need to create a webhook server that is capable of receiving this request 
 and returning an NCCO containing an action (https://developer.nexmo.com/voice/voice-api/ncco-reference)
 that will forward the call to the PSTN phone number.
@@ -30,24 +31,38 @@ Doc: https://developer.nexmo.com/voice/voice-api/webhook-reference#event-webhook
 
 */
 
+/* STEP 3
 
+Implement a logic to allow calls only to allowed numbers (for example, only to your personal number).
+If the number is in the allowed numbers, the call is forwarded to it.
+Otherwise, implement a TTS action with an alert to the user (for example: Sorry, that number is not permitted).
+
+
+Doc: https://developer.nexmo.com/voice/voice-api/ncco-reference
+
+*/
+
+
+// STEP 1 - VAPI ANSWER WEBHOOK
+// Type the code below this point please
 
 app.get('/webhooks/answer', (req, res) => {
 	console.log("Answer:");
 	console.log(req.query);
-	var dest_number = req.query.to;
-	// todo Step 1: connect to a PSTN Number
-
-	// todo Step 2 : Check the to number and make it's in the allowed numebrs to call
-	/* if (allowed_numbers.indexOf(dest_number) === -1) {
-		return res.json([{
-			"action": "talk",
-			"text": "Sorry, that number is not permitted"
-		}]);
-	} */
+	var destNumber = null; // How do you get the number from req.query? 
 	const ncco = []
 	res.json(ncco);
 });
+
+// STEP 1 - VAPI EVENT WEBHOOK - INIT
+// Type the code below this point please
+
+
+
+// STEP 1 - RTC EVENT WEBHOOK - INIT
+// Type the code below this point please
+
+
 
 
 app.get('/', function (req, res) {
