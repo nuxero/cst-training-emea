@@ -27,8 +27,7 @@
 
 
 <script>
-    // const USER_JWT = "PASTE YOUR JWT HERE";
-    const USER_JWT = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE1ODAxMzQ5NTIsImp0aSI6Ijc1MDRlYTQwLTQxMTAtMTFlYS1iY2Q5LWZmNzc1YjYzYWZlZCIsImV4cCI6MTU4MDE1NjU1MCwiYWNsIjp7InBhdGhzIjp7Ii8qL3VzZXJzLyoqIjp7fSwiLyovY29udmVyc2F0aW9ucy8qKiI6e30sIi8qL3Nlc3Npb25zLyoqIjp7fSwiLyovZGV2aWNlcy8qKiI6e30sIi8qL2ltYWdlLyoqIjp7fSwiLyovbWVkaWEvKioiOnt9LCIvKi9hcHBsaWNhdGlvbnMvKioiOnt9LCIvKi9wdXNoLyoqIjp7fSwiLyova25vY2tpbmcvKioiOnt9fX0sImFwcGxpY2F0aW9uX2lkIjoiMmFiZjllNDUtYWQ4ZS00MGFiLTkyNmMtYTg3ZDc3NDQxMWY3Iiwic3ViIjoiZXBvcnRvbGFuIn0.Z5ptUQsMA-xp2M-gC0lLgLSYnZlozWnTu4D6lIPTJIBEjgq50MC6YbjDHa4ZfpzeiYS2TjNk-icLaa9t2yR2VcOFfdqwxatk1hA0Wi9viCeubXVbDN8RelJu1QaVJYeMRUhtifLVoD2Tl_f3ESl_IxXaWD9dm8445fojJiLGh4ExShEvY8Xcq0LyrCCo44wqYDtVFQxzwOX0naLWFobuOnW7wIGIzZdeQREvlAdWGk7PcTvJLiSDIVVW5QywVXRvuQToHnNQdwp8YPy-TmoW2zNeTx9yvZ1dxMvPy4ypRjCuzfIpuKEUjALGpoCJkohNbwLL-bSOJlh_IvCSstmhNw";
+    const USER_JWT = "PASTE YOUR JWT HERE";
     const callPhoneForm = document.getElementById("call-phone-form");
     const callButton = callPhoneForm.children.call;
     const hangUpButton = callPhoneForm.children.hangup;
@@ -38,16 +37,9 @@
         .then(app => {
             callButton.addEventListener("click", event => {
                 event.preventDefault();
-                let number = document.getElementById('phone-number-input').value;
-                if (!number){
-                    return;
-                }
-                app.callServer(number).then((call) => {
-                    console.log('Call Server:', call);
-                    currentCall = call;
-                }).catch((err) => {
-                    console.log('Error:', err);
-                });
+                const number = null; // get number from the HTML Element 'phone-number-input'
+                // You have an application object (https://developer.nexmo.com/sdk/stitch/javascript/Application.html)
+                // You need to creates a call to phone a number. Please make sure that the number is not empty.
             });
         })
         .catch(console.error);
