@@ -2,9 +2,9 @@
 
 ## Server
 
-This tutorial is written in JavaScript using the (Express framework)[https://expressjs.com/]
+This tutorial is written in JavaScript using the [Express framework](https://expressjs.com/)
 
-For the documentation please visit TB guide for (Node)[https://tokbox.com/developer/sdks/node/]
+For the documentation please visit TB guide for [Node](https://tokbox.com/developer/sdks/node/)
 
 You'll need to complete 4 steps to complete this tutorial, and when you do your server will-
 
@@ -16,21 +16,25 @@ The server skeleton is located in ./application_server and the steps you need to
 
 **NOTE**: The server will only create one session per run, which means that all clients that fetch the session will be connected to the same one. This will enable you see yourself from two different clients.
 
-You can test your server using (Postman)[https://www.getpostman.com/] or (cURL)[https://help.ubidots.com/en/articles/2165289-learn-how-to-install-run-curl-on-windows-macosx-linux]
+You can test your server using [Postman](https://www.getpostman.com/) or [cURL](https://help.ubidots.com/en/articles/2165289-learn-how-to-install-run-curl-on-windows-macosx-linux)
 
-To expose your server to the outside world, we recommend using (ngrok)[https://ngrok.com/].
+To expose your server to the outside world, we recommend using [ngrok](https://ngrok.com/).
 
 Good Luck!
 
 ## Client
 
-Please follow this (tutorial)[https://tokbox.com/developer/tutorials/web/basic-video-chat/] with the following changes:
+Please follow this [tutorial](https://tokbox.com/developer/tutorials/web/basic-video-chat/) with the following changes:
 
 1. Your API_KEY should be hardcoded, and can be retrieved from the dashboard
-2. Session and token should be generated using the server you've just built. Use this (article)[https://www.freecodecamp.org/news/here-is-the-most-popular-ways-to-make-an-http-request-in-javascript-954ce8c95aaa/] for a quick explantation on how to do HTTP requests, the project already contains Ajax support. The flow should be-
-   ### 2.1 Create session
-   ### 2.2 Create token
-   ### 2.1 Initlialize session locally
+2. Session and token should be generated using the server you've just built. Use this [article](https://www.freecodecamp.org/news/here-is-the-most-popular-ways-to-make-an-http-request-in-javascript-954ce8c95aaa/) for a quick explantation on how to do HTTP requests, the project already contains Ajax support. The flow should be-
+
+   i. Create session
+
+   ii. Create token
+
+   iii. Initlialize session locally
+
 3. Complete the rest of the tutorial as described
 
 In the end you should be able to perform a one participant video session and see yourself.
