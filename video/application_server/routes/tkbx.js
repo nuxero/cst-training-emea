@@ -3,12 +3,21 @@ var router = express.Router();
 
 var sessionId;
 
-//1. Require TB client and initalize it
+
+/* STEP 1
+
+Require TB client and initalize it
+
+*/
 
 const createSession = onSessionCreated => {
-  //2. Generate session and update the property sessionId. Then call 'onSessionCreated()' method.
-  //    "...sessionId = 123453;"
-  //    "...onSessionCreated();"
+  /* STEP 2
+
+  Generate session and update the property sessionId. Then call 'onSessionCreated()' method.
+        "...sessionId = 123453;"
+        "...onSessionCreated();"
+
+  */
 };
 
 router.post('/session/', function(req, res, next) {
@@ -24,7 +33,11 @@ router.post('/session/', function(req, res, next) {
 });
 
 router.post('/user/', function(req, res, next) {
-  //3. Create oken and return to client
+  /* STEP 3
+
+  Create oken and return to client
+        
+  */
   const token = 'COMPLETE HERE';
   res.json({ token });
 });
