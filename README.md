@@ -29,7 +29,8 @@ You can use your favorite IDE. We suggest: https://code.visualstudio.com/
 
 ## Voice
 
-
+Voice hands-on: [go!](./voice/README.md)
 
 ## Video
 
+Video hands-on: [go!](./video/README.md)

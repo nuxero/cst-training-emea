@@ -22,9 +22,12 @@ nexmo app:create
 
 The application is then created.
 
-The file .nexmo-app is created in your project directory. This file contains the Nexmo Application ID and the private key. A private key file private.key is also created.
+The file .nexmo-app is created in your project directory. This file contains the Nexmo Application ID and the private key. A private key file private.key is also created. 
+Please spend a few minutes to understand the content of `.nexmo-app` file.
 
-You can obtain information about your application, including Application ID, in the Nexmo Dashboard (https://dashboard.nexmo.com/voice/your-applications)
+You can obtain information about your application, including Application ID, in the Nexmo Dashboard (https://dashboard.nexmo.com/voice/your-applications).
+
+You may want to **link a number** to the application. 
 
 
 #### Step 2: Create a User 
@@ -54,7 +57,18 @@ Well done. Now it's time to implement webhooks :)
 ### Server 
 
 The `server.js` contains the instruction for your next step. Please, have a look! 
- 
+
+#### How to run the server?
+
+Firstly, make sure you have installed the node_modules. Please run: `npm install` inside the voice folder.
+
+Then, to run the server in development mode, run:
+
+```
+npm run dev
+```
+
+The script is using livereload, so you don't need to reload the script everytime you make changes to the file
 
 ### Client
 

@@ -11,13 +11,15 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 /* STEP 1
 
-Nexmo will make a request to your answer_url when an inbound call is received.
+Nexmo will make an HTTP request to your answer_url when an inbound call is received.
 
 You need to create a webhook server that is capable of receiving this request 
 and returning an NCCO containing an action (https://developer.nexmo.com/voice/voice-api/ncco-reference)
 that will forward the call to the PSTN phone number.
 
 NOTE: Please check the Answer Webhook body, you will have to extract the PSTN Number to connect to.
+
+NOTE: Please remember to set up application webhook in the Nexmo Dashboard (https://dashboard.nexmo.com/applications)
 
 */
 
@@ -45,7 +47,6 @@ Doc: https://developer.nexmo.com/voice/voice-api/ncco-reference
 
 // STEP 1 - VAPI ANSWER WEBHOOK
 // Type the code below this point please
-
 app.get('/webhooks/answer', (req, res) => {
 	console.log("Answer:");
 	console.log(req.query);
