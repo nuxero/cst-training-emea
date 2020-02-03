@@ -27,7 +27,7 @@ Please spend a few minutes to understand the content of `.nexmo-app` file.
 
 You can obtain information about your application, including Application ID, in the Nexmo Dashboard (https://dashboard.nexmo.com/voice/your-applications).
 
-You may want to **link a number** to the application. 
+Remember to **link a number** to the application (using the dashboard)
 
 
 #### Step 2: Create a User 

@@ -14,10 +14,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 Nexmo will make an HTTP request to your answer_url when an inbound call is received.
 
 You need to create a webhook server that is capable of receiving this request 
-and returning an NCCO containing an action (https://developer.nexmo.com/voice/voice-api/ncco-reference)
-that will forward the call to the PSTN phone number.
+and returning an NCCO containing an action (https://developer.nexmo.com/voice/voice-api/ncco-reference).
 
-NOTE: Please check the Answer Webhook body, you will have to extract the PSTN Number to connect to.
+As a first step, create an ncco with a talk action. Call the LVN number and check if it's working.
 
 NOTE: Please remember to set up application webhook in the Nexmo Dashboard (https://dashboard.nexmo.com/applications)
 
@@ -34,6 +33,12 @@ Doc: https://developer.nexmo.com/voice/voice-api/webhook-reference#event-webhook
 */
 
 /* STEP 3
+
+Go to the client side and complete the task before.
+
+Once you've completed client side, you need to edit the NCCO to forward the call to a PSTN number.
+
+Please check the Answer Webhook body, you will have to extract the PSTN Number to connect to.
 
 Implement a logic to allow calls only to allowed numbers (for example, only to your personal number).
 If the number is in the allowed numbers, the call is forwarded to it.
