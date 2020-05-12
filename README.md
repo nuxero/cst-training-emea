@@ -1,3 +1,18 @@
+## Video certification
+
+1. Clone the repository
+2. Add your API KEY & SECRET to `video/application_server/routes/tkbx.js` and `video/web_client/js/app.js`.
+3. `cd` into `video/application_server/` and run `npm install && npm start`
+4. On a separate terminal, install `http-server` and serve the client files like this:
+
+```
+npm install -g http-server
+cd route/to/project/video/web_client
+http-server .
+```
+
+5. Open a browser and go to localhost:8080
+
 # CST Training EMEA
 
 Training session February 2020
