@@ -1,6 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
+const apiKey = 'YOUR API HERE';
+const apiSecret = 'YOUR SECRET HERE';
+
 var sessionId;
 
 
@@ -9,6 +12,8 @@ var sessionId;
 Require TB client and initalize it
 
 */
+var OpenTok = require('opentok'),
+    opentok = new OpenTok(apiKey, apiSecret);
 
 const createSession = onSessionCreated => {
   /* STEP 2
@@ -18,6 +23,14 @@ const createSession = onSessionCreated => {
         "...onSessionCreated();"
 
   */
+
+ opentok.createSession(function(err, session) {
+  if (err) return console.log(err);
+
+  // save the sessionId
+  sessionId = session.sessionId;
+  onSessionCreated();
+});
 };
 
 router.post('/session/', function(req, res, next) {
@@ -38,7 +51,7 @@ router.post('/user/', function(req, res, next) {
   Create oken and return to client
         
   */
-  const token = 'COMPLETE HERE';
+  const token = opentok.generateToken(sessionId);
   res.json({ token });
 });
 
